@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53A9BD80BE57FE0542B418C3 /* Pods_EEGMindReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295BEA19125D27F1B844E4C4 /* Pods_EEGMindReader.framework */; };
 		F34527971FC0FB8400D07489 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34527961FC0FB8400D07489 /* AppDelegate.swift */; };
 		F34527991FC0FB8400D07489 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34527981FC0FB8400D07489 /* ViewController.swift */; };
 		F345279C1FC0FB8400D07489 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F345279A1FC0FB8400D07489 /* Main.storyboard */; };
 		F345279E1FC0FB8400D07489 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F345279D1FC0FB8400D07489 /* Assets.xcassets */; };
 		F34527A11FC0FB8400D07489 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F345279F1FC0FB8400D07489 /* LaunchScreen.storyboard */; };
+		F34527AA1FC36CE200D07489 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F34527A91FC36CE200D07489 /* GoogleService-Info.plist */; };
+		F34527AE1FC3758500D07489 /* TrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34527AD1FC3758500D07489 /* TrainingViewController.swift */; };
+		F34527B01FC3863300D07489 /* RunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34527AF1FC3863300D07489 /* RunningViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		295BEA19125D27F1B844E4C4 /* Pods_EEGMindReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EEGMindReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D1ADDCF33C297839079B185 /* Pods-EEGMindReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EEGMindReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EEGMindReader/Pods-EEGMindReader.debug.xcconfig"; sourceTree = "<group>"; };
+		9FEDED19C168C08679C8BB15 /* Pods-EEGMindReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EEGMindReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-EEGMindReader/Pods-EEGMindReader.release.xcconfig"; sourceTree = "<group>"; };
 		F34527931FC0FB8400D07489 /* EEGMindReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EEGMindReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F34527961FC0FB8400D07489 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F34527981FC0FB8400D07489 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +29,9 @@
 		F345279D1FC0FB8400D07489 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F34527A01FC0FB8400D07489 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F34527A21FC0FB8400D07489 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F34527A91FC36CE200D07489 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F34527AD1FC3758500D07489 /* TrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewController.swift; sourceTree = "<group>"; };
+		F34527AF1FC3863300D07489 /* RunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A9BD80BE57FE0542B418C3 /* Pods_EEGMindReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2ADC952DC6C001503269F226 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				295BEA19125D27F1B844E4C4 /* Pods_EEGMindReader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49C0120520978132694328D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7D1ADDCF33C297839079B185 /* Pods-EEGMindReader.debug.xcconfig */,
+				9FEDED19C168C08679C8BB15 /* Pods-EEGMindReader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F345278A1FC0FB8400D07489 = {
 			isa = PBXGroup;
 			children = (
 				F34527951FC0FB8400D07489 /* EEGMindReader */,
 				F34527941FC0FB8400D07489 /* Products */,
+				49C0120520978132694328D9 /* Pods */,
+				2ADC952DC6C001503269F226 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,8 +84,11 @@
 		F34527951FC0FB8400D07489 /* EEGMindReader */ = {
 			isa = PBXGroup;
 			children = (
+				F34527A91FC36CE200D07489 /* GoogleService-Info.plist */,
 				F34527961FC0FB8400D07489 /* AppDelegate.swift */,
 				F34527981FC0FB8400D07489 /* ViewController.swift */,
+				F34527AD1FC3758500D07489 /* TrainingViewController.swift */,
+				F34527AF1FC3863300D07489 /* RunningViewController.swift */,
 				F345279A1FC0FB8400D07489 /* Main.storyboard */,
 				F345279D1FC0FB8400D07489 /* Assets.xcassets */,
 				F345279F1FC0FB8400D07489 /* LaunchScreen.storyboard */,
@@ -71,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F34527A51FC0FB8400D07489 /* Build configuration list for PBXNativeTarget "EEGMindReader" */;
 			buildPhases = (
+				B230EACC51D7F2342525B978 /* [CP] Check Pods Manifest.lock */,
 				F345278F1FC0FB8400D07489 /* Sources */,
 				F34527901FC0FB8400D07489 /* Frameworks */,
 				F34527911FC0FB8400D07489 /* Resources */,
+				6264CBBD3E12FC604B8427A2 /* [CP] Embed Pods Frameworks */,
+				E45E98617B0E8F71F688E7CE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F34527A11FC0FB8400D07489 /* LaunchScreen.storyboard in Resources */,
+				F34527AA1FC36CE200D07489 /* GoogleService-Info.plist in Resources */,
 				F345279E1FC0FB8400D07489 /* Assets.xcassets in Resources */,
 				F345279C1FC0FB8400D07489 /* Main.storyboard in Resources */,
 			);
@@ -131,12 +168,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6264CBBD3E12FC604B8427A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EEGMindReader/Pods-EEGMindReader-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EEGMindReader/Pods-EEGMindReader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B230EACC51D7F2342525B978 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EEGMindReader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E45E98617B0E8F71F688E7CE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EEGMindReader/Pods-EEGMindReader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F345278F1FC0FB8400D07489 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F34527AE1FC3758500D07489 /* TrainingViewController.swift in Sources */,
 				F34527991FC0FB8400D07489 /* ViewController.swift in Sources */,
+				F34527B01FC3863300D07489 /* RunningViewController.swift in Sources */,
 				F34527971FC0FB8400D07489 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +369,7 @@
 		};
 		F34527A61FC0FB8400D07489 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D1ADDCF33C297839079B185 /* Pods-EEGMindReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +385,7 @@
 		};
 		F34527A71FC0FB8400D07489 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FEDED19C168C08679C8BB15 /* Pods-EEGMindReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
