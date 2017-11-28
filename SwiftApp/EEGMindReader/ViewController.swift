@@ -9,6 +9,10 @@
 import UIKit
 import FirebaseDatabase
 
+/*
+ Initial ViewController, initializes firebase, train button
+ */
+
 class ViewController: UIViewController {
 
     var ref: DatabaseReference!

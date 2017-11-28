@@ -11,14 +11,20 @@ import FirebaseDatabase
 
 class RunningViewController: UIViewController {
 
+    // MARK: - UI Outlets
     
     @IBOutlet weak var actionLabel: UILabel!
     @IBOutlet weak var runFirstSelectionButton: UIButton!
     @IBOutlet weak var runSecondSelectionButton: UIButton!
+    
+    // MARK: - Globals
+    
     var ref: DatabaseReference!
     var theme: String?
     var optionOne: String = ""
     var optionTwo: String = ""
+    
+    // MARK: - Button Press Events
     
     @IBAction func firstSelectionRunning(_ sender: Any) {
         
@@ -27,23 +33,12 @@ class RunningViewController: UIViewController {
     @IBAction func secondSelectionRunning(_ sender: Any) {
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        ref = Database.database().reference()
-        
-        runFirstSelectionButton.layer.cornerRadius = 10
-        runSecondSelectionButton.layer.cornerRadius = 10
-        
-        let originalColorOne = self.runFirstSelectionButton.backgroundColor
-        let originalColorTwo = self.runSecondSelectionButton.backgroundColor
-        
-        setThemeAndValues()
-        
-        enableCommandEventListener(originalColorOne: originalColorOne, originalColorTwo: originalColorTwo)
-        
-    }
+    // MARK: - User Functions
     
+    /*******************************************************************************************************
+        Name:  setThemeAndValues
+        Brief: Set the theme from the firebase ref /theme save theme options in globals and assign to labels
+     *******************************************************************************************************/
     func setThemeAndValues() {
         var _ = ref.child("theme").observeSingleEvent(of: .value, with: { (snapshot) in
             self.theme = snapshot.value as? String? ?? "Control"
@@ -63,6 +58,12 @@ class RunningViewController: UIViewController {
         })
     }
     
+    /*******************************************************************************************************
+     Name:  enableCommandEventListener
+     Brief: Enable the event listener for firebase ref /modelPrediction which is written too by the headset
+            during the time which the data is being classified by the model.
+     params: originalColorOne, originalColorTwo - load back the original color of the buttons if selected
+     *******************************************************************************************************/
     func enableCommandEventListener(originalColorOne: UIColor?, originalColorTwo: UIColor?) {
         var _ = ref.child("modelPrediction").observe(DataEventType.value, with: { (snapshot) in
             if let value = snapshot.value as? String {
@@ -85,21 +86,29 @@ class RunningViewController: UIViewController {
             }
         })
     }
+    
+    // MARK: - UI Event Handlers
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        ref = Database.database().reference()
+        
+        runFirstSelectionButton.layer.cornerRadius = 10
+        runSecondSelectionButton.layer.cornerRadius = 10
+        
+        let originalColorOne = self.runFirstSelectionButton.backgroundColor
+        let originalColorTwo = self.runSecondSelectionButton.backgroundColor
+        
+        setThemeAndValues()
+        
+        enableCommandEventListener(originalColorOne: originalColorOne, originalColorTwo: originalColorTwo)
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
