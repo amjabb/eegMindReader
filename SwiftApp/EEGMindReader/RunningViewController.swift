@@ -37,12 +37,12 @@ class RunningViewController: UIViewController {
             if(value == 0){
                 self.actionLabel.text = "Value of A is \(value)"
                 self.runSecondSelectionButton.backgroundColor = UIColor.darkGray
-                self.runFirstSelectionButton.backgroundColor = UIColor.red
+                self.runFirstSelectionButton.backgroundColor = UIColor.blue
             }
             else if(value == 1){
                 self.actionLabel.text = "Value of B is \(value)"
-                self.runFirstSelectionButton.backgroundColor = UIColor.darkGray
-                self.runSecondSelectionButton.backgroundColor = UIColor(hue: 0.3556, saturation: 1, brightness: 0.63, alpha: 1.0)
+                self.runFirstSelectionButton.backgroundColor = UIColor.white
+                self.runSecondSelectionButton.backgroundColor = UIColor.blue
             }
         })
         

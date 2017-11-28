@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     var ref: DatabaseReference!
     @IBOutlet weak var testLabel: UILabel!
     @IBOutlet weak var trainButton: UIButton!
-    @IBOutlet weak var titleLabel: UILabel!
     
     @IBAction func sendTrainSignal(_ sender: Any) {
         
@@ -22,9 +21,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        titleLabel.text = "WELCOME TO\n THE MOST\n AMAZING\n MACHINE\n LEARNING\n MIND\n CONTROL APP"
-        
+    
         //Round button
         trainButton.layer.cornerRadius = 0.5 * trainButton.bounds.size.width
         trainButton.clipsToBounds = true

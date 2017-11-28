@@ -9,16 +9,23 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import GoogleSignIn
+import Google
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        // Initialize sign-in
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        GIDSignIn.sharedInstance().delegate = self
+        
         return true
     }
 
@@ -46,7 +53,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         
     }
-
-
+    
+    /***********************************************************************************************************************
+     **************************************Google Sign In Delegate Methods**************************************************
+     ************************************************************************************************************************/
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        print("Hi")
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if (error == nil) {
+            // Perform any operations on signed in user here.
+            print(user.profile.name ?? "Not Found")
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            window!.rootViewController = sb.instantiateViewController(withIdentifier: "initialVC")
+        } else {
+            print("\(error.localizedDescription)")
+        }
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url,
+                                                 sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                 annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+    }
+    
+    
+    
 }
 
