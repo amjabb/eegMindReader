@@ -32,17 +32,22 @@ class RunningViewController: UIViewController {
         runFirstSelectionButton.layer.cornerRadius = 10
         runSecondSelectionButton.layer.cornerRadius = 10
         
+        let originalColorOne = self.runFirstSelectionButton.backgroundColor
+        let originalColorTwo = self.runSecondSelectionButton.backgroundColor
+        
         var _ = ref.child("modelPrediction").observe(DataEventType.value, with: { (snapshot) in
             let value = snapshot.value as? Int ?? 0
             if(value == 0){
                 self.actionLabel.text = "Value of A is \(value)"
-                self.runSecondSelectionButton.backgroundColor = UIColor.darkGray
-                self.runFirstSelectionButton.backgroundColor = UIColor.blue
+                self.runSecondSelectionButton.backgroundColor = UIColor.white
+                self.runSecondSelectionButton.titleLabel?.textColor = UIColor.black
+                self.runFirstSelectionButton.backgroundColor = originalColorOne
             }
             else if(value == 1){
                 self.actionLabel.text = "Value of B is \(value)"
                 self.runFirstSelectionButton.backgroundColor = UIColor.white
-                self.runSecondSelectionButton.backgroundColor = UIColor.blue
+                self.runFirstSelectionButton.titleLabel?.textColor = UIColor.black
+                self.runSecondSelectionButton.backgroundColor = originalColorTwo
             }
         })
         

@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             // Perform any operations on signed in user here.
             print(user.profile.name ?? "Not Found")
             let sb = UIStoryboard(name: "Main", bundle: nil)
-            window!.rootViewController = sb.instantiateViewController(withIdentifier: "initialVC")
+            window!.rootViewController = sb.instantiateViewController(withIdentifier: "initialNavController")
         } else {
             print("\(error.localizedDescription)")
         }

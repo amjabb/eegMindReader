@@ -387,7 +387,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7D1ADDCF33C297839079B185 /* Pods-EEGMindReader.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 37ZDYP6BN7;
@@ -406,7 +407,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9FEDED19C168C08679C8BB15 /* Pods-EEGMindReader.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 37ZDYP6BN7;
