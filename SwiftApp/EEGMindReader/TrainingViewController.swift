@@ -103,7 +103,8 @@ class TrainingViewController: UIViewController {
                 trainingLabel.text = "Select \(selectionTwo.titleLabel?.text ?? "")"
                 let updateValues = ["trainingOne":0]
                 ref.child("training").updateChildValues(updateValues)
-            } else if(isSelectionTwoSelected) {
+            }
+            if(isSelectionTwoSelected) {
                 selectionOne.isEnabled = true
                 selectionTwo.isEnabled = false
                 trainingLabel.text = "Select \(selectionOne.titleLabel?.text ?? "")"
