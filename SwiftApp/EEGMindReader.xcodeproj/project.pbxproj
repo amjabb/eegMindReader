@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		53A9BD80BE57FE0542B418C3 /* Pods_EEGMindReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295BEA19125D27F1B844E4C4 /* Pods_EEGMindReader.framework */; };
+		F33552A31FCE04FF0050C561 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F33552A21FCE04FF0050C561 /* Launch Screen.storyboard */; };
 		F34527971FC0FB8400D07489 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34527961FC0FB8400D07489 /* AppDelegate.swift */; };
 		F34527991FC0FB8400D07489 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34527981FC0FB8400D07489 /* ViewController.swift */; };
 		F345279C1FC0FB8400D07489 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F345279A1FC0FB8400D07489 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		295BEA19125D27F1B844E4C4 /* Pods_EEGMindReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EEGMindReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1ADDCF33C297839079B185 /* Pods-EEGMindReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EEGMindReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EEGMindReader/Pods-EEGMindReader.debug.xcconfig"; sourceTree = "<group>"; };
 		9FEDED19C168C08679C8BB15 /* Pods-EEGMindReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EEGMindReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-EEGMindReader/Pods-EEGMindReader.release.xcconfig"; sourceTree = "<group>"; };
+		F33552A21FCE04FF0050C561 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F338491E1FCCF6C6008EB90E /* EEG3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EEG3.png; sourceTree = "<group>"; };
 		F34527931FC0FB8400D07489 /* EEGMindReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EEGMindReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F34527961FC0FB8400D07489 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 		F345278A1FC0FB8400D07489 = {
 			isa = PBXGroup;
 			children = (
+				F33552A21FCE04FF0050C561 /* Launch Screen.storyboard */,
 				F34527951FC0FB8400D07489 /* EEGMindReader */,
 				F34527941FC0FB8400D07489 /* Products */,
 				49C0120520978132694328D9 /* Pods */,
@@ -170,6 +173,7 @@
 				F34527A11FC0FB8400D07489 /* LaunchScreen.storyboard in Resources */,
 				F38566981FCCC44600C01B4C /* GoogleService-Info.plist in Resources */,
 				F345279E1FC0FB8400D07489 /* Assets.xcassets in Resources */,
+				F33552A31FCE04FF0050C561 /* Launch Screen.storyboard in Resources */,
 				F345279C1FC0FB8400D07489 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

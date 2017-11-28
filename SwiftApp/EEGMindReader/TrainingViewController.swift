@@ -25,13 +25,17 @@ class TrainingViewController: UIViewController {
     var isSelectionTwoSelected = false
     var isSelectionOneTrained = false
     var isSelectionTwoTrained = false
-    var defaultTheme = "Letters"
+    var defaultTheme = "Control"
     var theme:String = ""
     
     
     @IBAction func changeThemeButtonPress(_ sender: Any) {
         
         let changeThemeAlertController = UIAlertController(title: "Change Theme", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+        
+        //Default Action
+        let controlAction = UIAlertAction(title: "Control", style: UIAlertActionStyle.default, handler: {(alert: UIAlertAction!) in self.selectTheme(themeName: "Control", option1: "Start", option2: "Stop")})
+
         
         let colorsAction = UIAlertAction(title: "Colors", style: UIAlertActionStyle.default, handler: {(alert: UIAlertAction!) in self.selectTheme(themeName: "Colors", option1: "Red", option2: "Blue")})
         
@@ -41,6 +45,7 @@ class TrainingViewController: UIViewController {
         
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {(alert: UIAlertAction!) in print("cancel")})
         
+        changeThemeAlertController.addAction(controlAction)
         changeThemeAlertController.addAction(colorsAction)
         changeThemeAlertController.addAction(lettersAction)
         changeThemeAlertController.addAction(addNewAction)
@@ -135,30 +140,27 @@ class TrainingViewController: UIViewController {
     func getThemeFromFirebase() {
         var _ = ref.child("theme").observe(DataEventType.value, with: { (snapshot) in
             self.theme = snapshot.value as? String ?? ""
-            
-            //set theme on page
-            switch self.theme {
-            case "Letters":
-                self.selectionOne.setTitle("C", for: UIControlState.normal)
-                self.selectionTwo.setTitle("D", for: UIControlState.normal)
-            default:
-                self.selectionOne.setTitle("A", for: UIControlState.normal)
-                self.selectionTwo.setTitle("B", for: UIControlState.normal)
-            }
-            
         })
     }
     
-    func selectTheme(themeName:String, option1:String, option2:String){
+    func adjustLabelFonts(){
         self.selectionOne.titleLabel?.adjustsFontSizeToFitWidth = true
         self.selectionOne.titleLabel?.minimumScaleFactor = 0.2
         
         self.selectionTwo.titleLabel?.adjustsFontSizeToFitWidth = true
         self.selectionTwo.titleLabel?.minimumScaleFactor = 0.2
+    }
+    
+    func selectTheme(themeName:String, option1:String, option2:String){
+        adjustLabelFonts()
         
         self.selectionOne.setTitle(option1, for: UIControlState.normal)
         self.selectionTwo.setTitle(option2, for: UIControlState.normal)
+    
         self.theme = themeName
+        
+        let updateTheme = ["theme": themeName, themeName.lowercased():[option2:0, option1:1]] as [String : Any]
+        ref.updateChildValues(updateTheme)
         
     }
     
@@ -200,8 +202,12 @@ class TrainingViewController: UIViewController {
         isSelectionTwoSelected = false
         isSelectionOneTrained = false
         isSelectionTwoTrained = false
-        defaultTheme = "Letters"
+        defaultTheme = "Control"
         theme = ""
+        
+        adjustLabelFonts()
+        self.selectionOne.setTitle("Start", for: UIControlState.normal)
+        self.selectionTwo.setTitle("Stop", for: UIControlState.normal)
     }
     
     func addLoadingOverlay(timeToLoad:UInt32){
@@ -220,15 +226,6 @@ class TrainingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        ref = Database.database().reference()
-//
-//        initStoryAlertController()
-//
-//        getThemeFromFirebase()
-//
-//        //Buttons round edge
-//        selectionOne.layer.cornerRadius = 10
-//        selectionTwo.layer.cornerRadius = 10
     }
     
     override func viewWillAppear(_ animated: Bool) {

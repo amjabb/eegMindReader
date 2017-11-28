@@ -16,6 +16,9 @@ class RunningViewController: UIViewController {
     @IBOutlet weak var runFirstSelectionButton: UIButton!
     @IBOutlet weak var runSecondSelectionButton: UIButton!
     var ref: DatabaseReference!
+    var theme: String?
+    var optionOne: String = ""
+    var optionTwo: String = ""
     
     @IBAction func firstSelectionRunning(_ sender: Any) {
         
@@ -35,22 +38,52 @@ class RunningViewController: UIViewController {
         let originalColorOne = self.runFirstSelectionButton.backgroundColor
         let originalColorTwo = self.runSecondSelectionButton.backgroundColor
         
+        setThemeAndValues()
+        
+        enableCommandEventListener(originalColorOne: originalColorOne, originalColorTwo: originalColorTwo)
+        
+    }
+    
+    func setThemeAndValues() {
+        var _ = ref.child("theme").observeSingleEvent(of: .value, with: { (snapshot) in
+            self.theme = snapshot.value as? String? ?? "Control"
+            
+            var _ = self.ref.child("\(self.theme?.lowercased() ?? "control")").observeSingleEvent(of: .value, with: { (snapshot) in
+                let themeVal = snapshot.value
+                if let themeDict = themeVal as? Dictionary<String, Int>? ?? [:]{
+                    let themeArray = Array(themeDict.keys).sorted()
+                    self.runFirstSelectionButton.setTitle(themeArray[0], for: [])
+                    self.optionOne = themeArray[0]
+                    self.runSecondSelectionButton.setTitle(themeArray[1], for: [])
+                    self.optionTwo = themeArray[1]
+                }
+                
+            })
+            
+        })
+    }
+    
+    func enableCommandEventListener(originalColorOne: UIColor?, originalColorTwo: UIColor?) {
         var _ = ref.child("modelPrediction").observe(DataEventType.value, with: { (snapshot) in
-            let value = snapshot.value as? Int ?? 0
-            if(value == 0){
-                self.actionLabel.text = "Value of A is \(value)"
-                self.runSecondSelectionButton.backgroundColor = UIColor.white
-                self.runSecondSelectionButton.titleLabel?.textColor = UIColor.black
-                self.runFirstSelectionButton.backgroundColor = originalColorOne
-            }
-            else if(value == 1){
-                self.actionLabel.text = "Value of B is \(value)"
-                self.runFirstSelectionButton.backgroundColor = UIColor.white
-                self.runFirstSelectionButton.titleLabel?.textColor = UIColor.black
-                self.runSecondSelectionButton.backgroundColor = originalColorTwo
+            if let value = snapshot.value as? String {
+                if(Int(value) == 0){
+                    self.actionLabel.text = "Running \(self.optionOne != "" ? self.optionOne : self.runFirstSelectionButton.titleLabel?.text  ?? "")"
+                    self.runSecondSelectionButton.backgroundColor = UIColor.white
+                    self.runSecondSelectionButton.setTitleColor(UIColor.black, for: [])
+                    self.runFirstSelectionButton.backgroundColor = originalColorOne
+                    self.runFirstSelectionButton.setTitleColor(UIColor.white, for: [])
+                }
+                else if(Int(value) == 1){
+                    self.actionLabel.text = "Running \(self.optionTwo != "" ? self.optionTwo : self.runSecondSelectionButton.titleLabel?.text  ?? "")"
+                    
+                    self.runFirstSelectionButton.backgroundColor = UIColor.white
+                    self.runFirstSelectionButton.setTitleColor(UIColor.black, for: [])
+                    
+                    self.runSecondSelectionButton.backgroundColor = originalColorTwo
+                    self.runSecondSelectionButton.setTitleColor(UIColor.white, for: [])
+                }
             }
         })
-        
     }
 
     override func didReceiveMemoryWarning() {

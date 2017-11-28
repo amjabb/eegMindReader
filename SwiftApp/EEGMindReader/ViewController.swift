@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         
         //Access firebase
         ref = Database.database().reference()
-        let initValues = ["letters":["A":0, "B":1], "training": ["trainingStart": 0, "trainingDone": 0, "trainingOne": 0, "trainingTwo": 0],  "theme": "Letters", "appStart": 1, "appDone": 0] as [String : Any]
+        let initValues = ["letters":["A":0, "B":1], "training": ["trainingStart": 0, "trainingDone": 0, "trainingOne": 0, "trainingTwo": 0],  "theme": "Control", "appStart": 1, "appDone": 0] as [String : Any]
         ref.updateChildValues(initValues)
         // Do any additional setup after loading the view, typically from a nib.
     }
