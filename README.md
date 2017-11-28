@@ -24,7 +24,7 @@ Pip install requirement.txt
 ## Getting Started
 
 
-Main file in /eegCommLayer is sequencemgmt.js which can be run with Node’s V8 JavaScript Engine. This file is a sequencer that makes multiple other file calls and hosts many subprocesses to communicate with the EEG Headset as well as the companion app. This sequence engine is run on dedicated hardware along with the necessary packages, extensive knowledge of platform is required to manually run engine. Once engine is started with is by default on power up of hardware, all UI controls take place through mobile application.
+Main file in /eegCommLayer is sequence_mgmt.js which can be run with Node’s V8 JavaScript Engine. This file is a sequencer that makes multiple other file calls and hosts many subprocesses to communicate with the EEG Headset as well as the companion app. This sequence engine is run on dedicated hardware along with the necessary packages, extensive knowledge of platform is required to manually run engine. Once engine is started with is by default on power up of hardware, all UI controls take place through mobile application.
 
 To build the companion app /SwiftApp XCode 9.0 + is required. Along with Cocoa Pods installed in XCode project root directory.
 
