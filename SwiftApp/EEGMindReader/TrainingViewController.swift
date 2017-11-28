@@ -30,6 +30,7 @@ class TrainingViewController: UIViewController {
     var ref: DatabaseReference!
     let secondsConst = 15
     var seconds = 15 //This variable will hold a starting value of seconds.
+    let timeForEEGSensorInit:UInt32 = 4
     var timer = Timer()
     var isSeletionOneSelected = false
     var isSelectionTwoSelected = false
@@ -81,7 +82,7 @@ class TrainingViewController: UIViewController {
             updateValues = ["trainingStart":0]
             ref.child("training").updateChildValues(updateValues)
             
-            addLoadingOverlay(timeToLoad: 4)
+            addLoadingOverlay(timeToLoad: timeForEEGSensorInit, messageToDisplay: "Starting EEG Headset...")
             dismiss(animated: false, completion: nil)
         }
         selectionTwo.isEnabled = false
@@ -109,7 +110,7 @@ class TrainingViewController: UIViewController {
             updateValues = ["trainingStart":0]
             ref.child("training").updateChildValues(updateValues)
             
-            addLoadingOverlay(timeToLoad: 4)
+            addLoadingOverlay(timeToLoad: timeForEEGSensorInit, messageToDisplay: "Starting EEG Headset...")
             dismiss(animated: false, completion: nil)
         }
         selectionOne.isEnabled = false
@@ -285,8 +286,8 @@ class TrainingViewController: UIViewController {
      Brief: Wait for EEG sensor to initialize, displays a modal Alert view loading icon.
      param: timeToLoad
      *******************************************************************************************************/
-    func addLoadingOverlay(timeToLoad:UInt32){
-        let alert = UIAlertController(title: nil, message: "Starting EEG Headset...", preferredStyle: .alert)
+    func addLoadingOverlay(timeToLoad:UInt32, messageToDisplay:String ){
+        let alert = UIAlertController(title: nil, message: messageToDisplay, preferredStyle: .alert)
         
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 55, height: 50))
         loadingIndicator.hidesWhenStopped = true

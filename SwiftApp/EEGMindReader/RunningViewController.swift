@@ -33,6 +33,7 @@ class RunningViewController: UIViewController {
     @IBAction func secondSelectionRunning(_ sender: Any) {
     }
     
+    
     // MARK: - User Functions
     
     /*******************************************************************************************************
@@ -87,10 +88,30 @@ class RunningViewController: UIViewController {
         })
     }
     
+    /*******************************************************************************************************
+     Name:  addLoadingOverlay
+     Brief: Wait for EEG sensor to initialize, displays a modal Alert view loading icon.
+     param: timeToLoad
+     *******************************************************************************************************/
+    func addLoadingOverlay(timeToLoad:UInt32, messageToDisplay:String){
+        let alert = UIAlertController(title: nil, message: messageToDisplay, preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 55, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: {sleep(timeToLoad)})
+    }
+    
     // MARK: - UI Event Handlers
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addLoadingOverlay(timeToLoad: 10, messageToDisplay: "Training ML Model...")
+        
         // Do any additional setup after loading the view.
         ref = Database.database().reference()
         
