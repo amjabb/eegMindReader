@@ -40,7 +40,7 @@ node test_firebase.js
 Execute this command in parallel will running the firebase test script or using the iOS app.
 
 ```
-node sequenc_mgmt.js
+node sequence_mgmt.js
 ```
 
 ### Break down into code
