@@ -11,7 +11,7 @@ import FirebaseDatabase
 
 class RunningViewController: UIViewController {
 
-    // MARK: - UI Outlets
+    // MARK: - UI Outlets -------------------------------------------------------------------------------------------------------------->
     
     @IBOutlet weak var actionLabel: UILabel!
     @IBOutlet weak var runFirstSelectionButton: UIButton!
@@ -24,7 +24,7 @@ class RunningViewController: UIViewController {
     var optionOne: String = ""
     var optionTwo: String = ""
     
-    // MARK: - Button Press Events
+    // MARK: - Button Press Events -------------------------------------------------------------------------------------------------------->
     
     @IBAction func firstSelectionRunning(_ sender: Any) {
         
@@ -34,7 +34,7 @@ class RunningViewController: UIViewController {
     }
     
     
-    // MARK: - User Functions
+    // MARK: - User Functions -------------------------------------------------------------------------------------------------------------->
     
     /*******************************************************************************************************
         Name:  setThemeAndValues
@@ -105,7 +105,7 @@ class RunningViewController: UIViewController {
         present(alert, animated: true, completion: {sleep(timeToLoad)})
     }
     
-    // MARK: - UI Event Handlers
+    // MARK: - UI Event Handlers -------------------------------------------------------------------------------------------------------------->
     
     override func viewDidLoad() {
         super.viewDidLoad()

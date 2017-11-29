@@ -25,7 +25,7 @@ class TrainingViewController: UIViewController {
     @IBOutlet weak var selectionTwo: UIButton!
     @IBOutlet weak var changeThemeButton: UIBarButtonItem!
     
-    // MARK: - Globals
+    // MARK: - Globals -------------------------------------------------------------------------------------------------------------->
 
     var ref: DatabaseReference!
     let secondsConst = 15
@@ -40,7 +40,7 @@ class TrainingViewController: UIViewController {
     var theme:String = ""
     
     
-    // MARK: - Button Event Handlers
+    // MARK: - Button Event Handlers -------------------------------------------------------------------------------------------------------------->
     
     /*******************************************************************************************************
      Name:  changeThemeButtonPress
@@ -125,7 +125,7 @@ class TrainingViewController: UIViewController {
         ref.child("training").updateChildValues(updateValues)
     }
     
-    // MARK: - User Functions
+    // MARK: - User Functions -------------------------------------------------------------------------------------------------------------->
     
     /*******************************************************************************************************
      Name:  initStoryAlertController
@@ -298,7 +298,7 @@ class TrainingViewController: UIViewController {
         present(alert, animated: true, completion: {sleep(timeToLoad)})
     }
     
-    // MARK: - UI Event Handlers
+    // MARK: - UI Event Handlers -------------------------------------------------------------------------------------------------------------->
     
     override func viewDidLoad() {
         super.viewDidLoad()
