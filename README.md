@@ -43,12 +43,23 @@ Execute this command in parallel will running the firebase test script or using 
 node sequence_mgmt.js
 ```
 
-### Break down into code
-
-Explaination of our top level coding model
+### State Machine
 
 ```
-Give an example
+              Firebase
+             /        \
+            /          \ 
+           /            \
+State   iOS App        Headset
+-----   -------        -------
+0        Idle            NC
+1        Login           NC
+2        Train          Connecting
+3       TrainOne        Collecting Data for One
+4       TrainTwo        Collecting Data for Two
+5         Idle          Creating model
+6     Showing Output    Running data through model(Real-time)
+
 ```
 
 ## Deployment
