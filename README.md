@@ -28,6 +28,9 @@ Main file in /eegCommLayer is sequence_mgmt.js which can be run with Node’s V8
 
 To build the companion app /SwiftApp XCode 9.0 + is required. Along with Cocoa Pods installed in XCode project root directory.
 
+## Mobile App Splashscreen
+
+https://appsite.skygear.io/eegmindreader/
 
 ## Running the tests
 
