@@ -23,6 +23,7 @@ class RunningViewController: UIViewController {
     var theme: String?
     var optionOne: String = ""
     var optionTwo: String = ""
+    let timeForMLModel:UInt32 = 8
     
     // MARK: - Button Press Events -------------------------------------------------------------------------------------------------------->
     
@@ -91,7 +92,7 @@ class RunningViewController: UIViewController {
     /*******************************************************************************************************
      Name:  addLoadingOverlay
      Brief: Wait for EEG sensor to initialize, displays a modal Alert view loading icon.
-     param: timeToLoad
+     param: timeToLoad, messageToDisplay
      *******************************************************************************************************/
     func addLoadingOverlay(timeToLoad:UInt32, messageToDisplay:String){
         let alert = UIAlertController(title: nil, message: messageToDisplay, preferredStyle: .alert)
@@ -110,7 +111,8 @@ class RunningViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addLoadingOverlay(timeToLoad: 10, messageToDisplay: "Training ML Model...")
+//       addLoadingOverlay(timeToLoad: timeForMLModel, messageToDisplay: "Training ML Model...")
+//       dismiss(animated: false, completion: nil)
         
         // Do any additional setup after loading the view.
         ref = Database.database().reference()

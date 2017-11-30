@@ -30,7 +30,7 @@ class TrainingViewController: UIViewController {
     var ref: DatabaseReference!
     let secondsConst = 15
     var seconds = 15 //This variable will hold a starting value of seconds.
-    let timeForEEGSensorInit:UInt32 = 4
+    let timeForEEGSensorInit:UInt32 = 8
     var timer = Timer()
     var isSeletionOneSelected = false
     var isSelectionTwoSelected = false
