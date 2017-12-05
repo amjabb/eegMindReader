@@ -11,7 +11,7 @@ import FirebaseDatabase
 
 class RunningViewController: UIViewController {
 
-    // MARK: - UI Outlets
+    // MARK: - UI Outlets -------------------------------------------------------------------------------------------------------------->
     
     @IBOutlet weak var actionLabel: UILabel!
     @IBOutlet weak var runFirstSelectionButton: UIButton!
@@ -23,8 +23,9 @@ class RunningViewController: UIViewController {
     var theme: String?
     var optionOne: String = ""
     var optionTwo: String = ""
+    let timeForMLModel:UInt32 = 8
     
-    // MARK: - Button Press Events
+    // MARK: - Button Press Events -------------------------------------------------------------------------------------------------------->
     
     @IBAction func firstSelectionRunning(_ sender: Any) {
         
@@ -34,7 +35,7 @@ class RunningViewController: UIViewController {
     }
     
     
-    // MARK: - User Functions
+    // MARK: - User Functions -------------------------------------------------------------------------------------------------------------->
     
     /*******************************************************************************************************
         Name:  setThemeAndValues
@@ -91,7 +92,7 @@ class RunningViewController: UIViewController {
     /*******************************************************************************************************
      Name:  addLoadingOverlay
      Brief: Wait for EEG sensor to initialize, displays a modal Alert view loading icon.
-     param: timeToLoad
+     param: timeToLoad, messageToDisplay
      *******************************************************************************************************/
     func addLoadingOverlay(timeToLoad:UInt32, messageToDisplay:String){
         let alert = UIAlertController(title: nil, message: messageToDisplay, preferredStyle: .alert)
@@ -105,12 +106,13 @@ class RunningViewController: UIViewController {
         present(alert, animated: true, completion: {sleep(timeToLoad)})
     }
     
-    // MARK: - UI Event Handlers
+    // MARK: - UI Event Handlers -------------------------------------------------------------------------------------------------------------->
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addLoadingOverlay(timeToLoad: 10, messageToDisplay: "Training ML Model...")
+//       addLoadingOverlay(timeToLoad: timeForMLModel, messageToDisplay: "Training ML Model...")
+//       dismiss(animated: false, completion: nil)
         
         // Do any additional setup after loading the view.
         ref = Database.database().reference()
