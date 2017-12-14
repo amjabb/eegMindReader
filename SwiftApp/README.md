@@ -9,7 +9,14 @@ https://appsite.skygear.io/eegmindreader/
 
 ### Screenshots:
 
-Add Here
+<p align="center">
+  <img src="AppScreenshots/LoginScreen.png" width="200"/>
+  <img src="AppScreenshots/HomeScreen.png" width="200"/>
+  <img src="AppScreenshots/RenameTheme.png" width="200"/></br>
+  <img src="AppScreenshots/TrainingIP.png" width="200"/>
+  <img src="AppScreenshots/TrainingScreen.png" width="200"/>
+  <img src="AppScreenshots/RunningClassifier.png" width="200"/>
+</p>
 	
 ### Features:
 
