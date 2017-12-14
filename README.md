@@ -40,19 +40,7 @@ To build the companion app /SwiftApp XCode 9.0 + is required. Along with Cocoa P
 
 https://appsite.skygear.io/eegmindreader/
 
-## Running the tests
-
-
-If you not already connected to the iOS application you can test using test script. This script acts as if you are triggering the flags to train data and make decisions.
-
-```
-node test_firebase.js
-```
-Execute this command in parallel will running the firebase test script or using the iOS app.
-
-```
-node sequence_mgmt.js
-```
+## Design
 
 ### Headset
 <p align="center">
@@ -76,6 +64,19 @@ State   iOS App        Headset
 5         Idle          Creating model
 6     Showing Output    Running data through model(Real-time)
 
+```
+
+### Running the tests
+
+If you not already connected to the iOS application you can test using test script. This script acts as if you are triggering the flags to train data and make decisions.
+
+```
+node test_firebase.js
+```
+Execute this command in parallel will running the firebase test script or using the iOS app.
+
+```
+node sequence_mgmt.js
 ```
 
 ## Versioning
