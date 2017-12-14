@@ -54,6 +54,11 @@ Execute this command in parallel will running the firebase test script or using 
 node sequence_mgmt.js
 ```
 
+### Headset
+<p align="center">
+  <img src="headset_model/Headset_Picture.png" width="600"/>
+</p>
+
 ### State Machine
 
 ```
