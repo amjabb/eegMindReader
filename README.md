@@ -1,11 +1,5 @@
 # Mind Reader
 
-### Video
-
-[![Youtube Video](https://img.youtube.com/vi/uhK6hbT17xc/0.jpg)](https://www.youtube.com/watch?v=uhK6hbT17xc) 
-</br>
-https://www.youtube.com/watch?v=uhK6hbT17xc
-
 ## Deployment
 
 The main focus of this project is to create a platform for simple use, high quality and mobile egg technology. The headset is able to detect electrical signals in the brain (via electroencephalography, or EEG) as well as muscular movements (electromyography, or EMG), both well known in the medical community. Once you have those signals, the real magic begins, which is the ability to map signals to different actions. By doing so, the user is effectively teaching the machine how to read a specific mind.
@@ -78,6 +72,12 @@ Execute this command in parallel will running the firebase test script or using 
 ```
 node sequence_mgmt.js
 ```
+
+### Demo Video
+
+[![Youtube Video](https://img.youtube.com/vi/uhK6hbT17xc/0.jpg)](https://www.youtube.com/watch?v=uhK6hbT17xc) 
+</br>
+https://www.youtube.com/watch?v=uhK6hbT17xc
 
 ## Versioning
 1.0
